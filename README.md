@@ -47,3 +47,5 @@ conda activate cspc
 **Integrating back:** Integration is a sum, so random noise partly cancels out. Integrating the noisy acceleration twice recovered the position with a maximum difference of 0.78 m from the original, which shows that integration suppresses noise.
 
 ![motion](PW2/Lab%20A/motion.png)
+
+**Bonus:** From `trajectory.csv` I plotted the x-y path and computed the speed with `np.gradient` on each coordinate (mean speed ≈ 23.65 m/s). Figure: `PW2/Lab A/trajectory.png`.

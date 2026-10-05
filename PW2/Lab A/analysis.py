@@ -85,3 +85,5 @@ ax2.set_title("Speed")
 
 fig2.tight_layout()
 fig2.savefig("trajectory.png")
+
+**Bonus:** From `trajectory.csv` I plotted the x-y path and computed the speed with `np.gradient` on each coordinate (mean speed ≈ 23.65 m/s). Figure: `PW2/Lab A/trajectory.png`.
