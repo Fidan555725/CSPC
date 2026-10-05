@@ -61,3 +61,27 @@ ax3.set_xlabel("Time (s)")
 ax3.legend()
 
 fig.savefig("motion.png")
+
+# ---- BONUS: 2D trajectory ----
+data2 = np.loadtxt("trajectory.csv", delimiter=",", skiprows=1)
+t2, x2, y2 = data2[:, 0], data2[:, 1], data2[:, 2]
+
+vx = np.gradient(x2, t2)
+vy = np.gradient(y2, t2)
+speed = np.sqrt(vx**2 + vy**2)
+print("Mean speed:", speed.mean())
+
+fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+ax1.plot(x2, y2)
+ax1.set_xlabel("x (m)")
+ax1.set_ylabel("y (m)")
+ax1.set_title("Path")
+ax1.set_aspect("equal")
+
+ax2.plot(t2, speed)
+ax2.set_xlabel("Time (s)")
+ax2.set_ylabel("Speed (m/s)")
+ax2.set_title("Speed")
+
+fig2.tight_layout()
+fig2.savefig("trajectory.png")
