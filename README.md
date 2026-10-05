@@ -22,3 +22,18 @@ conda activate cspc
 
 **Conclusion:**
 - The NumPy vectorised version is dramatically faster than the pure-Python loop because it processes all atoms at once instead of one at a time. I learned how to set up a reproducible Python environment with conda, use Git branching and remotes, and write pytest tests that check both error handling and statistical correctness within a tolerance.
+
+
+---
+
+## PW1 - Lab B: Data, Plotting, and Automation
+
+**What I built:**
+- A plot.py script that reads the observed decay data, computes the analytical decay curve, and produces a side-by-side comparison figure (figure.png).
+- A Snakefile that automates the figure generation: it rebuilds figure.png only when decay_observed.csv or plot.py change, and does nothing when nothing changed.
+
+**Result:**
+- The observed data and the analytical curve (N0 * exp(-lambda * t)) match closely in shape on the shared axes, confirming the decay follows the expected exponential law.
+
+**Conclusion:**
+- Snakemake makes the pipeline reproducible: instead of rerunning python plot.py by hand every time, a single `snakemake --cores 1 figure.png` command checks file timestamps and only redoes work when inputs have actually changed.
