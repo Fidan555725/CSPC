@@ -37,3 +37,13 @@ conda activate cspc
 
 **Conclusion:**
 - Snakemake makes the pipeline reproducible: instead of rerunning python plot.py by hand every time, a single `snakemake --cores 1 figure.png` command checks file timestamps and only redoes work when inputs have actually changed.
+
+## PW2 — Lab A
+
+**Mean acceleration:** -8.58 m/s² (standard deviation = 28.72 m/s²). The mean is close to the expected -9.81 m/s², which confirms the object is in free fall.
+
+**Why the acceleration is noisy:** A derivative compares nearby measurements, so it amplifies the measurement noise. The acceleration comes from differentiating twice, so the noise is amplified twice. This is why the acceleration values swing wildly (std much larger than the mean) while the position data looks smooth.
+
+**Integrating back:** Integration is a sum, so random noise partly cancels out. Integrating the noisy acceleration twice recovered the position with a maximum difference of 0.78 m from the original, which shows that integration suppresses noise.
+
+![motion](PW2/Lab%20A/motion.png)
