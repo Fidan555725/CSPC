@@ -49,3 +49,13 @@ conda activate cspc
 ![motion](PW2/Lab%20A/motion.png)
 
 **Bonus:** From `trajectory.csv` I plotted the x-y path and computed the speed with `np.gradient` on each coordinate (mean speed ≈ 23.65 m/s). Figure: `PW2/Lab A/trajectory.png`.
+
+## PW2 — Lab B
+
+**Part 2 (three methods):** On the convex function f(x) = (x-3)^2 + 1, gradient descent, Newton and SLSQP all reach x ≈ 3. On g(x) = x^4 - 3x^2 + x + 5 the methods do not always agree. From x0 = 0, Newton converged to x ≈ 0.17, where g'' < 0, so it is a maximum (a stationary point, not a minimum), while gradient descent and SLSQP found the minimum at x ≈ -1.30. From x0 = 2, gradient descent and Newton found the local minimum at x ≈ 1.13 (g'' > 0), while SLSQP found the global minimum at x ≈ -1.30. So the starting point and the algorithm both matter on a complicated landscape.
+
+**Part 3 (rate constant):** The fitted first-order rate constant is k ≈ 0.262, close to the expected 0.25, and the fitted curve passes through the data.
+
+**Part 4 (equilibrium):** Newton and SLSQP agree: x ≈ 0.664. Equilibrium composition: H2 = 0.336 mol, I2 = 0.336 mol, HI = 1.328 mol.
+
+**Part 5 (titration, bonus):** The equivalence point is at 50 mL, where the slope of the pH curve is largest.
